@@ -1,0 +1,220 @@
+{
+  "name": "Tentate Mágico",
+  "discount_percent": 5,
+  "questions": [
+    {
+      "id": "dulzor",
+      "text": "Hoy estás para...",
+      "image": "assets/img/quiz/q1.jpg",
+      "options": [
+        {
+          "id": "choco",
+          "label": "¿Algo bien chocolateado?",
+          "weights": {
+            "Tortas": 2,
+            "Cupcakes": 2,
+            "Cookies": 1
+          }
+        },
+        {
+          "id": "frutal",
+          "label": "¿Algo frutal y fresquito?",
+          "weights": {
+            "Tartas": 2,
+            "Mini Postres": 1
+          }
+        },
+        {
+          "id": "clásico",
+          "label": "Voy por lo clásico",
+          "weights": {
+            "Alfajores": 2,
+            "Tortas": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "compartir",
+      "text": "¿Para vos o para compartir?",
+      "image": "assets/img/quiz/q2.jpg",
+      "options": [
+        {
+          "id": "solo",
+          "label": "Solo para mí 😋",
+          "weights": {
+            "Cupcakes": 2,
+            "Cookies": 2
+          }
+        },
+        {
+          "id": "compa",
+          "label": "Para compartir 🎉",
+          "weights": {
+            "Tortas": 2,
+            "Tartas": 2,
+            "Mini Postres": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "intensidad",
+      "text": "¿Nivel de tentación?",
+      "image": "assets/img/quiz/q3.jpg",
+      "options": [
+        {
+          "id": "suave",
+          "label": "Tranqui",
+          "weights": {
+            "Tartas": 1,
+            "Mini Postres": 1
+          }
+        },
+        {
+          "id": "media",
+          "label": "Con ganas",
+          "weights": {
+            "Cupcakes": 1,
+            "Tortas": 1,
+            "Cookies": 1
+          }
+        },
+        {
+          "id": "full",
+          "label": "¡A todo o nada!",
+          "weights": {
+            "Tortas": 2,
+            "Cookies": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "momento",
+      "text": "¿Para qué momento del día es?",
+      "image": "assets/img/quiz/q4.jpg",
+      "options": [
+        {
+          "id": "desayuno",
+          "label": "Desayuno / Merienda",
+          "weights": {
+            "Cookies": 2,
+            "Cupcakes": 2,
+            "Alfajores": 1
+          }
+        },
+        {
+          "id": "postre",
+          "label": "Postre después de comer",
+          "weights": {
+            "Tartas": 2,
+            "Mini Postres": 2
+          }
+        },
+        {
+          "id": "festejo",
+          "label": "¡Una celebración!",
+          "weights": {
+            "Tortas": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "textura",
+      "text": "¿Qué textura te tienta más?",
+      "image": "assets/img/quiz/q5.jpg",
+      "options": [
+        {
+          "id": "crocante",
+          "label": "Crocante",
+          "weights": {
+            "Tartas": 1,
+            "Cookies": 2
+          }
+        },
+        {
+          "id": "cremosa",
+          "label": "Cremosa",
+          "weights": {
+            "Mini Postres": 2,
+            "Tortas": 1
+          }
+        },
+        {
+          "id": "aireada",
+          "label": "Aireada/Esponjosa",
+          "weights": {
+            "Cupcakes": 2,
+            "Tortas": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "preferencia",
+      "text": "¿Alguna preferencia especial?",
+      "image": "assets/img/quiz/q6.jpg",
+      "options": [
+        {
+          "id": "sintacc",
+          "label": "Podría ser sin TACC",
+          "weights": {
+            "Tortas": 1,
+            "Tartas": 1
+          }
+        },
+        {
+          "id": "vegano",
+          "label": "Me copa lo vegano",
+          "weights": {
+            "Cookies": 1,
+            "Mini Postres": 1
+          }
+        },
+        {
+          "id": "todolindo",
+          "label": "Estoy para todo 😎",
+          "weights": {
+            "Tortas": 1,
+            "Cupcakes": 1,
+            "Alfajores": 1,
+            "Tartas": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "presupuesto",
+      "text": "¿Tenés un presupuesto en mente?",
+      "image": "assets/img/quiz/q7.jpg",
+      "options": [
+        {
+          "id": "bajo",
+          "label": "Algo tranqui",
+          "weights": {
+            "Cookies": 1,
+            "Alfajores": 1
+          }
+        },
+        {
+          "id": "medio",
+          "label": "Intermedio",
+          "weights": {
+            "Cupcakes": 1,
+            "Tartas": 1
+          }
+        },
+        {
+          "id": "alto",
+          "label": "Quiero lucirme",
+          "weights": {
+            "Tortas": 2,
+            "Mini Postres": 1
+          }
+        }
+      ]
+    }
+  ]
+}

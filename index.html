@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TENTATE MAS | Pastelería - Catálogo</title>
+  <meta name="description" content="Tentate Más — Antojos que te hacen sonreír. Catálogo de pastelería con pedidos por WhatsApp.">
+  <meta property="og:title" content="Tentate Más · Catálogo">
+  <meta property="og:description" content="Antojos que te hacen sonreír. Hacé tu pedido por WhatsApp.">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=18">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#inicio" aria-label="Inicio">
+      <img src="assets/img/logo.png" alt="Logo TENTATE MAS">
+      <span class="brand">TENTATE MAS</span>
+    </a>
+    <nav class="nav">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div style="display:flex; gap:8px; align-items:center">
+      <button id="btn-quiz" class="btn btn-outline" title="Tentate Mágico" onclick="startQuiz()">✨ Tentate Mágico</button>
+      <button id="open-cart" class="btn btn-outline" aria-haspopup="dialog" aria-controls="drawer">
+        🧺 Carrito <span id="cart-badge" class="cart-badge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="inicio" aria-label="Destacado">
+  <div class="container hero-wrap">
+    <div>
+      <h1>Antojos que te hacen sonreír</h1>
+      <p>Pastelería artesanal con ingredientes de primera. Personalizá tu pedido y te lo preparamos con amor ♥</p>
+      <a class="btn" href="#catalogo">Ver catálogo</a>
+    </div>
+    <img class="hero-img" src="assets/img/hero.jpg" alt="Pastelería artesanal">
+  </div>
+</section>
+
+<section class="controls" id="catalogo">
+  <div class="container">
+    <div class="row">
+      <select id="sort" aria-label="Ordenar">
+        <option value="ventas">Más vendidos</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+      </select>
+      <input id="search" type="search" placeholder="Buscar por nombre o descripción…" aria-label="Buscar productos">
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div id="catalog-error" class="inline-note" hidden></div>
+  <div id="accordion" class="accordion" aria-live="polite"></div>
+</main>
+
+<aside id="drawer" class="drawer" role="dialog" aria-label="Carrito" aria-hidden="true">
+  <header><strong>Tu pedido</strong><button id="close-cart" aria-label="Cerrar">✕</button></header>
+  <div id="cart-items" class="items"></div>
+  <div class="summary">
+    <div class="row"><span>Subtotal</span><span id="sum-subtotal">$ 0,00</span></div>
+    <div class="row"><span>Envío</span><span id="sum-envio">$ 0,00</span></div>
+    <div class="row total"><span>Total</span><span id="sum-total">$ 0,00</span></div>
+    <div class="row">
+      <button id="checkout" class="btn">Finalizar pedido</button>
+      <button id="clear-cart" class="btn btn-outline">Vaciar carrito</button>
+    </div>
+    <small class="envio-note" id="envio-note"></small>
+  </div>
+</aside>
+
+<!-- Modal producto -->
+<div id="modal-quick" class="modal" role="dialog" aria-modal="true" aria-labelledby="quick-title">
+  <div class="dialog">
+    <header><strong id="quick-title">Producto</strong><button data-close-modal aria-label="Cerrar">✕</button></header>
+    <div class="body">
+      <div class="product-quick">
+        <img id="quick-img" src="" alt="">
+        <div>
+          <div id="quick-price" class="price" style="margin:6px 0"></div>
+          <p id="quick-desc" class="muted"></p>
+          <div id="opt-wrap"></div>
+          <div class="controls-row" style="margin-top:10px">
+            <div class="stepper"><button data-act="dec">–</button><input id="quick-qty" type="number" min="1" max="50" value="1"><button data-act="inc">+</button></div>
+            <button id="quick-add" class="btn">Agregar</button>
+          </div>
+          <div class="inline-note">Elegí tamaño, bizcochuelo, rellenos y extras. El precio se actualiza automáticamente.</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><button data-close-modal class="btn btn-outline">Cerrar</button></div>
+  </div>
+</div>
+
+<!-- Modal checkout -->
+<div id="modal-checkout" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+  <div class="dialog">
+    <header><strong id="checkout-title">Finalizar pedido</strong><button data-close-checkout aria-label="Cerrar">✕</button></header>
+    <div class="body">
+      <form id="checkout-form" class="form-grid" novalidate>
+        <div><label for="c-nombre">Nombre y apellido</label><input id="c-nombre" name="nombre" type="text" required placeholder="Tu nombre"></div>
+        <div><label for="c-dire">Dirección completa</label><input id="c-dire" name="direccion" type="text" required placeholder="Calle 123, piso, depto, localidad"></div>
+        <div><label for="c-tel">Teléfono</label><input id="c-tel" name="telefono" type="tel" inputmode="tel" required placeholder="11 3671-6421" pattern="[0-9\s()+-]{8,}"></div>
+        <div><label for="c-pago">Forma de pago</label><select id="c-pago" name="pago" required></select></div>
+        <div id="pago-info" class="inline-note" hidden></div>
+        <small class="muted" id="checkout-disclaimer"></small>
+      </form>
+    </div>
+    <div class="footer"><button data-close-checkout class="btn btn-outline">Cancelar</button><button id="confirm-order" class="btn">Confirmar y abrir WhatsApp</button></div>
+  </div>
+</div>
+
+<!-- Modal TENTATE MÁGICO -->
+<div id="modal-quiz" class="modal" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+  <div class="dialog">
+    <header><strong id="quiz-title">✨ Tentate Mágico</strong><button aria-label="Cerrar" onclick="(function(){document.querySelector('#modal-quiz').classList.remove('open');document.body.classList.remove('modal-open')})()">✕</button></header>
+    <div class="body" id="quiz-body"></div>
+    <div class="footer"><button class="btn btn-outline" onclick="(function(){document.querySelector('#modal-quiz').classList.remove('open');document.body.classList.remove('modal-open')})()">Cerrar</button></div>
+  </div>
+</div>
+
+<a class="whatsapp-float" href="#" id="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<section class="faq container" id="faq">
+  <h2 class="h2">Preguntas frecuentes</h2>
+  <details><summary>¿Hacen tortas personalizadas?</summary>¡Sí! Podés elegir sabor, tamaño, rellenos y extras desde el catálogo.</details>
+  <details><summary>¿Cómo coordino el envío?</summary>Al finalizar tu pedido por WhatsApp, coordinamos envío o retiro por el local.</details>
+</section>
+
+<footer class="footer" id="contacto">
+  <div class="container cols">
+    <div><div class="logo"><img src="assets/img/logo.png" alt="TENTATE MAS"><span class="brand">TENTATE MAS</span></div><small id="footer-horarios" class="muted"></small></div>
+    <div><strong>Contacto</strong><div><a id="footer-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></div></div>
+    <div><strong>Redes</strong><div><a href="#" aria-label="Instagram">Instagram</a></div></div>
+  </div>
+  <div class="container"><small class="muted">© <span id="year"></span> Tentate Más. Precios sujetos a cambio.</small></div>
+</footer>
+
+<script defer src="assets/js/app.js?v=18"></script>
+</body>
+</html>

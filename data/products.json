@@ -1,0 +1,205 @@
+[
+  {
+    "id": "torta-choco-intensa",
+    "nombre": "Torta de Chocolate Intensa",
+    "descripcion": "Bizcochuelo húmedo 70% cacao y ganache suave.",
+    "precio": 22000,
+    "imagen": "assets/img/products/torta-choco-intensa.jpg",
+    "categoria": "Tortas",
+    "ventas": 230,
+    "upsell": true,
+    "options": [
+      {
+        "id": "tam",
+        "label": "Tamaño",
+        "type": "single",
+        "required": true,
+        "choices": [
+          {
+            "id": "20",
+            "label": "20 cm (8–10 porciones)",
+            "delta": 0
+          },
+          {
+            "id": "24",
+            "label": "24 cm (12–14)",
+            "delta": 6000
+          },
+          {
+            "id": "28",
+            "label": "28 cm (16–18)",
+            "delta": 12000
+          }
+        ]
+      },
+      {
+        "id": "bizcocho",
+        "label": "Bizcochuelo",
+        "type": "single",
+        "required": true,
+        "choices": [
+          {
+            "id": "vainilla",
+            "label": "Vainilla",
+            "delta": 0
+          },
+          {
+            "id": "chocolate",
+            "label": "Chocolate",
+            "delta": 1500
+          }
+        ]
+      },
+      {
+        "id": "relleno",
+        "label": "Relleno (máx. 2)",
+        "type": "multiple",
+        "max": 2,
+        "choices": [
+          {
+            "id": "ddl",
+            "label": "Dulce de leche",
+            "delta": 0
+          },
+          {
+            "id": "ganache",
+            "label": "Ganache de chocolate",
+            "delta": 3000
+          },
+          {
+            "id": "frutillas",
+            "label": "Crema + frutillas",
+            "delta": 3000
+          }
+        ]
+      },
+      {
+        "id": "extra",
+        "label": "Extras",
+        "type": "multiple",
+        "choices": [
+          {
+            "id": "mensaje",
+            "label": "Mensaje en chocolate",
+            "delta": 1500
+          },
+          {
+            "id": "velitas",
+            "label": "Velitas",
+            "delta": 800
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "torta-vainilla-crema",
+    "nombre": "Torta Vainilla con Crema",
+    "descripcion": "Esponjosa, con crema y frutillas.",
+    "precio": 21000,
+    "imagen": "assets/img/products/torta-vainilla-crema.jpg",
+    "categoria": "Tortas",
+    "ventas": 180,
+    "upsell": false
+  },
+  {
+    "id": "cupcakes-vainilla-6",
+    "nombre": "Cupcakes Vainilla x6",
+    "descripcion": "Esponjosos con buttercream suave.",
+    "precio": 9800,
+    "imagen": "assets/img/products/cupcakes-vainilla-6.jpg",
+    "categoria": "Cupcakes",
+    "ventas": 120,
+    "upsell": true
+  },
+  {
+    "id": "cupcakes-choco-6",
+    "nombre": "Cupcakes Chocolate x6",
+    "descripcion": "Intensos con cobertura de cacao.",
+    "precio": 10500,
+    "imagen": "assets/img/products/cupcakes-choco-6.jpg",
+    "categoria": "Cupcakes",
+    "ventas": 110,
+    "upsell": true
+  },
+  {
+    "id": "alfajores-surtidos",
+    "nombre": "Alfajores surtidos 1/2 kg",
+    "descripcion": "Mezcla de sabores clásicos y premium.",
+    "precio": 8900,
+    "imagen": "assets/img/products/alfajores-surtidos.jpg",
+    "categoria": "Alfajores",
+    "ventas": 190,
+    "upsell": true
+  },
+  {
+    "id": "tarta-frutillas",
+    "nombre": "Tarta de Frutillas",
+    "descripcion": "Base crocante, crema pastelera y frutillas frescas.",
+    "precio": 15000,
+    "imagen": "assets/img/products/tarta-frutillas.jpg",
+    "categoria": "Tartas",
+    "ventas": 160,
+    "upsell": false
+  },
+  {
+    "id": "tarta-manzana",
+    "nombre": "Tarta de Manzana",
+    "descripcion": "Clásica con canela, súper perfumada.",
+    "precio": 13800,
+    "imagen": "assets/img/products/tarta-manzana.jpg",
+    "categoria": "Tartas",
+    "ventas": 140,
+    "upsell": false
+  },
+  {
+    "id": "cookies-chips",
+    "nombre": "Cookies con chips x12",
+    "descripcion": "Mantecosas y crocantes, llenas de chips.",
+    "precio": 7500,
+    "imagen": "assets/img/products/cookies-chips.jpg",
+    "categoria": "Cookies",
+    "ventas": 90,
+    "upsell": true
+  },
+  {
+    "id": "cookies-choco",
+    "nombre": "Cookies doble chocolate x12",
+    "descripcion": "Mega chocolateadas.",
+    "precio": 7900,
+    "imagen": "assets/img/products/cookies-choco.jpg",
+    "categoria": "Cookies",
+    "ventas": 85,
+    "upsell": true
+  },
+  {
+    "id": "mini-postres-vasito",
+    "nombre": "Mini postres en vasito x6",
+    "descripcion": "Variedad de sabores para tus eventos.",
+    "precio": 12500,
+    "imagen": "assets/img/products/mini-postres-vasito.jpg",
+    "categoria": "Mini Postres",
+    "ventas": 70,
+    "upsell": false
+  },
+  {
+    "id": "alfajores-maicena",
+    "nombre": "Alfajores de maicena x12",
+    "descripcion": "Rellenos con dulce de leche y coco.",
+    "precio": 7200,
+    "imagen": "assets/img/products/alfajores-maicena.jpg",
+    "categoria": "Alfajores",
+    "ventas": 130,
+    "upsell": true
+  },
+  {
+    "id": "mini-cheesecake",
+    "nombre": "Mini Cheesecake x6",
+    "descripcion": "Suaves y cremosos, con coulis.",
+    "precio": 13200,
+    "imagen": "assets/img/products/mini-cheesecake.jpg",
+    "categoria": "Mini Postres",
+    "ventas": 75,
+    "upsell": false
+  }
+]

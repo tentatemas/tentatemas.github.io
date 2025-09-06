@@ -1,0 +1,23 @@
+{
+  "whatsapp_number": "5491136716421",
+  "moneda": "ARS",
+  "envio": {
+    "monto": 0,
+    "texto": "Retiro por el local (sin costo) o coordinamos envío."
+  },
+  "formas_pago": [
+    "Efectivo",
+    "Transferencia",
+    "Mercado Pago",
+    "Tarjeta"
+  ],
+  "datos_pago": {
+    "transferencia": "ALIAS: tentatemas.pagos | CBU: 0000000000000000000000",
+    "mercado_pago": "Mostrá tu QR o instrucción breve editable"
+  },
+  "mensajes": {
+    "disclaimer": "Precios sujetos a cambio. Pedido a confirmar por WhatsApp.",
+    "horarios": "Lun a Sáb 9–19 h",
+    "direccion_publica": ""
+  }
+}
